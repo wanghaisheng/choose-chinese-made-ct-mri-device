@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Imaging Devices</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Medical Imaging Devices</h1>
+  </header>
+  <main>
+    <section id="filters">
+        <label for="equipmentType">Equipment Type:</label>
+        <select id="equipmentType">
+            <option value="all">All</option>
+            <option value="ctScanners">CT Scanners</option>
+            <option value="mriScanners">MRI Scanners</option>
+        </select>
+        <label for="brandFilter">Filter by Brand:</label>
+        <select id="brandFilter">
+            <option value="all">All</option>
+            </select>
+    </section>
+    <section id="device-list">
+         <!-- Devices will be populated here -->
+      </section>
+    <section id="brand-list">
+        <!-- Brands will be populated here -->
+      </section>
+      <section id="customer-list">
+           <!-- Customers will be populated here -->
+        </section>
+        <section id="timeline">
+          <!-- Timeline information will be here -->
+        </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
