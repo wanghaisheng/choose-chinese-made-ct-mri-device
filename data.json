@@ -750,4 +750,25 @@
          },
          {
            "year":"2007",
-             "event":"Austar Medical’s Centauri 1.5T was the first completely China-made superconducting MRI machine
+             "event":"Austar Medical’s Centauri 1.5T was the first completely China-made superconducting MRI machine        },
+        {
+            "year":"2008",
+            "event":"Austar Medical made history with their first sale of a Chinese-made 1.5T superconducting MRI scanner to an American hospital"
+       },
+        {
+           "year":"2015",
+           "event":"United Imaging entered the 3T MRI space with their own machine, and Austar’s 71cm large-bore 1.5T MRI system received FDA approval"
+        },
+        {
+           "year":"2020",
+             "event":"United Imaging launched the world's first 75cm large-bore 3.0T MRI system"
+        },
+         {
+              "year":"2021",
+              "event":"United Imaging released the world's first whole-body 5.0T MRI scanner, the uMR Jupiter"
+         }
+
+    ]
+
+  }
+}
