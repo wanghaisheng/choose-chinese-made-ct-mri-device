@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /data/
 Allow: /
 
-Sitemap: https://feelingchart.heytcm.com/sitemap.xml
+Sitemap: https://chinactscanner.org/sitemap.xml
