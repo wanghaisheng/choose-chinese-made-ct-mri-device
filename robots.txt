@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /private/
+Disallow: /data/
 Allow: /
 
 Sitemap: https://feelingchart.heytcm.com/sitemap.xml
