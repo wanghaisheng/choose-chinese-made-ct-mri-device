@@ -1,1 +1,2975 @@
+<html><head>
+<title>Medizinische Bildgebungslösungen Landingpage</title>
+<style>
+  /* Estilos existentes */
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+  }
 
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52,98,219,0.1), rgba(52,98,219,0.3));
+    z-index: -1;
+  }
+
+  .quote-form {
+    max-width: 500px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .quote-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .quote-form input, 
+  .quote-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .quote-form input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .quote-form input[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+
+  /* Nuevo efecto de hover sutil para la tabla de comparación */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .comparison-table th, 
+  .comparison-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+
+  .comparison-table thead {
+    background-color: #f2f2f2;
+  }
+
+  .comparison-table tbody tr {
+    transition: background-color 0.3s ease;
+  }
+
+  .comparison-table tbody tr:hover {
+    background-color: rgba(52,152,219,0.1);
+  }
+
+  /* Nuevos estilos para las secciones */
+  .tech-details {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .tech-details h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+
+  .tech-grid {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+  }
+
+  .tech-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    width: 90%; 
+    max-width: 300px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .tech-item:hover {
+    transform: scale(1.05);
+  }
+
+  .support-section {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .support-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .support-feature {
+    margin: 15px;
+    max-width: 300px;
+    width: 90%; 
+  }
+
+  .case-studies {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .case-study-grid {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+  }
+
+  .case-study {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    width: 90%;  
+    max-width: 400px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .case-study:hover {
+    transform: scale(1.03);
+  }
+
+  .global-impact {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .impact-metrics {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .impact-metric {
+    margin: 15px;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    width: 90%; 
+    max-width: 300px; 
+  }
+
+  .innovation-showcase {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .innovation-grid {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+  }
+
+  .innovation {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    width: 90%; 
+    max-width: 300px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .innovation:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  }
+
+  .technical-specifications {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .technical-specifications h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+
+  .training-certification {
+    background-color: #f7f7f7;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .training-certification h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+
+  .price-comparison-tool.extended {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .comparison-controls {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .comparison-results {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .comparison-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .comparison-item:hover {
+    transform: scale(1.05);
+  }
+
+  .comparison-summary {
+    margin-top: 30px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  /* Estilos de navegación */
+  .main-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .main-navigation .logo a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .main-navigation ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+
+  .main-navigation ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .main-navigation ul li a:hover {
+    color: #3498db;
+  }
+
+  /* Estilos de tecnologías emergentes */
+  .emerging-technologies {
+    background-color: #f4f7f6;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .tech-carousel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .tech-slide {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px;
+    width: 90%; 
+    max-width: 400px; 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+  }
+
+  .tech-slide:hover {
+    transform: scale(1.05);
+  }
+
+  /* Diseño responsivo */
+  @media (max-width: 600px) {
+    .quote-form, .tech-item {
+      width: 90%;
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .case-study, .impact-metric, .innovation {
+      width: 90%;
+    }
+    .market-segmentation {
+      grid-template-columns: 1fr;
+    }
+    .market-share-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Nuevo CSS para la sección de boletín */
+  .newsletter {
+    background-color: #f4f7f6;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 90%; 
+    max-width: 400px;
+  }
+
+  .newsletter-form button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 90%;  
+    max-width: 420px;
+  }
+
+  .newsletter-form button:hover {
+    background-color: #2980b9;
+  }
+
+  /* Nuevo CSS para la sección de preguntas frecuentes */
+  .faqs {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .faq-item h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+  }
+
+  /* Nuevo CSS para la sección de asociaciones */
+  .partnerships {
+    background-color: white;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .partnership-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .partner-logo {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+
+  .partner-logo:hover {
+    filter: grayscale(0%);
+  }
+
+  .partner-logo img {
+    max-width: 150px;
+    height: auto;
+  }
+
+  /* Estilos de tooltip */
+  .tooltip {
+    position: absolute;
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #2c3e50 transparent transparent transparent;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+  }
+
+  .tooltip.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .price-calculator {
+    background-color: #f4f7f6;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .calculator-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .calculator-form select, 
+  .calculator-form input[type="range"] {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #estimated-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3498db;
+  }
+  
+  .enhanced-specs {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .specs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .spec-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .spec-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  }
+
+  .spec-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+  }
+
+  .spec-card ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .spec-card li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    cursor: help;
+    position: relative;
+  }
+
+  .spec-card li:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c3e50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 10;
+  }
+  
+  .market-landscape {
+    background-color: #f4f7f6;
+    padding: 50px 20px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .market-insights-header {
+    margin-bottom: 30px;
+  }
+  
+  .market-segments-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .market-segment-analysis {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .segment-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .segment-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .segment-details {
+    margin-top: 10px;
+  }
+  
+  .segment-characteristics {
+    margin-top: 10px;
+  }
+  
+  .segment-characteristics ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .segment-characteristics li {
+    margin-bottom: 5px;
+  }
+  
+  .segment-manufacturers {
+    margin-top: 10px;
+  }
+  
+  .segment-manufacturers ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .segment-manufacturers li {
+    margin-bottom: 5px;
+  }
+  
+  .market-trends-section {
+    margin-top: 40px;
+  }
+  
+  .market-trends-section h3 {
+    margin-bottom: 10px;
+  }
+  
+  .historical-context {
+    margin-top: 40px;
+  }
+  
+  .historical-context h3 {
+    margin-bottom: 10px;
+  }
+  
+  .medical-imaging-market-dynamics {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .market-dynamics-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .brand-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .brand-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .price-segmentation {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  /* Estilos adicionales para la información de mercado expandida */
+  .market-segmentation .segment-tier {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .market-segmentation .segment-tier:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .historical-milestones ul {
+    list-style-type: disc;
+    padding-left: 30px;
+  }
+
+  .brand-card {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .market-dynamics-detailed {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .market-segmentation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .segment-tier {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .brand-chip {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 15px;
+    display: inline-block;
+  }
+
+  .market-share-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .brand-share-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .brand-name {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+
+  .brand-share-bar {
+    background-color: #3498db;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: right;
+  }
+
+  .timeline {
+    background-color: #f1f1f1;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .milestone-item {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .milestone-year {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-right: 15px;
+  }
+
+  .milestone-event {
+    color: #34495e;
+  }
+
+  .market-evolution-section {
+    background-color: #f9f9f9;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .historical-context {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .milestone {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+  }
+
+  .milestone-year {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-right: 15px;
+    min-width: 80px;
+  }
+
+  .milestone-event {
+    color: #34495e;
+  }
+
+  .technology-evolution {
+    margin-top: 20px;
+    font-style: italic;
+    color: #2980b9;
+  }
+
+  .market-share-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    flex-direction: column; 
+  }
+
+  .market-share-section {
+    width: 100%;  
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .market-share-chart {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .market-share-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .market-share-bar-fill {
+    height: 30px;
+    transition: width 0.5s ease-in-out;
+  }
+
+  .market-share-label {
+    margin-left: 10px;
+    font-weight: bold;
+  }
+
+  .market-share-details {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  /* Agregar estilos para las nuevas visualizaciones de tendencias y desglose regional */
+  .global-trends-section, 
+  .regional-breakdown-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .trends-grid, 
+  .regional-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .player-chip {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 15px;
+    display: inline-block;
+  }
+
+  .detailed-market-segmentation {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .segment-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .segment-tier {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .segment-tier:hover {
+    transform: translateY(-5px);
+  }
+  
+  .tier-details {
+    margin-top: 10px;
+  }
+  
+  .tier-characteristics {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .characteristic {
+    background-color: #f4f4f4;
+    padding: 8px;
+    border-radius: 5px;
+  }
+
+  .regional-market-analysis,
+  .future-market-outlook {
+    background-color: #f9f9f9;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .regional-insights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .region-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 90%; 
+    max-width: 400px;
+  }
+
+  .region-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  }
+
+  .driver-chip,
+  .challenge-chip,
+  .shift-chip {
+    background-color: #f4f4f4;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 0.9rem;
+  }
+
+  .market-value-projection {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .projection-item {
+    text-align: center;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 10px;
+  }
+
+  .projection-item .year {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .projection-item .value {
+    color: #3498db;
+    font-size: 1.2rem;
+  }
+  
+  .region-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .region-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  }
+
+  .market-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .growth-rate {
+    font-size: 1.2em;
+    color: #2c3e50;
+    padding: 10px;
+    background: rgba(52,152,219,0.1);
+    border-radius: 5px;
+  }
+
+  .key-drivers, 
+  .challenge-areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .driver-chip,
+  .challenge-chip {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+  }
+
+  .challenge-chip {
+    background-color: #e74c3c;
+  }
+
+  .regional-market-analysis {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+
+  @media (max-width: 768px) {
+    .market-landscape .global-innovation-trends,
+    .market-landscape .technological-frontiers,
+    .market-landscape .competitive-landscape,
+    .market-landscape .regional-market-analysis,
+    .market-landscape .future-market-outlook {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .market-landscape .innovation-chip,
+    .market-landscape .technology-card,
+    .market-landscape .manufacturer-card,
+    .market-landscape .region-card,
+    .market-landscape .projection-item {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .market-landscape .innovation-drivers,
+    .market-landscape .frontier-technologies,
+    .market-landscape .manufacturer-comparison,
+    .market-landscape .regional-insights,
+    .market-landscape .market-projections {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  
+  .competitive-landscape {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+  }
+
+  .market-players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .manufacturer-detailed-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .manufacturer-detailed-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .market-metrics {
+    margin-top: 15px;
+  }
+
+  .market-share {
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 10px;
+  }
+
+  .technological-strengths {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .strength-chip {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+  }
+
+  .competitive-dynamics {
+    margin-top: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .market-trends {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .trend-chip {
+    background-color: #2ecc71;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+  }
+
+  .competitive-strategies ul {
+    list-style-type: disc;
+    padding-left: 30px;
+  }
+
+  .market-landscape-card-grid {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+  }
+
+  .market-landscape-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .landscape-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .landscape-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .landscape-card h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+  }
+
+  .innovation-chips,
+  .technological-strengths,
+  .key-drivers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .innovation-chip,
+  .strength-chip,
+  .driver-chip,
+  .app-chip {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+  }
+
+  .market-projections {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .projection-item {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  @media (max-width: 768px) {
+    .market-landscape-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .market-share-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .brand-share-card {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .brand-name {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #e9ecef;
+  }
+
+  .brand-share-bar {
+    background-color: #3498db;
+    color: white;
+    text-align: right;
+    padding: 10px;
+    min-width: 50px;
+  }
+
+  .gps-comparison {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+  }
+
+  .gps-characteristics {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .performance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .performance-metric {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .metric-comparison {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .china-metric, .global-metric {
+    font-weight: bold;
+  }
+
+  .china-metric {
+    color: #3498db;
+  }
+
+  .global-metric {
+    color: #2ecc71;
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+<meta name="description" content="Umfassende Marktinformationen über medizinische Bildgebung, einschließlich Marktanteil, Segmentierung und historischer Kontext, um Kaufentscheidungen und technologische Zusammenfassungen zu informieren.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedizinischeBildgebungsgeräte",
+  "name": "Medizinische Bildgebungslösungen",
+  "description": "Fortgeschrittene medizinische Bildgebungsgeräte für Gesundheitsfachpersonal",
+  "image": "https://example.com/logo.png",
+  "url": "https://example.com"
+}
+</script>
+<style>
+.advanced-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  z-index: 2;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+  padding-right: 30px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary {
+  background-color: white;
+  color: #3498db;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+}
+
+.hero-visual {
+  flex: 1;
+  max-width: 400px;
+}
+
+.medical-scanner-illustration {
+  width: 100%;
+  height: auto;
+}
+
+.hero-metrics {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.metric-label {
+  display: block;
+  color: rgba(255,255,255,0.7);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-text {
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
+  
+  .hero-metrics {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+</style>
+</head>
+<body>
+  <nav class="main-navigation">
+    <div class="logo">
+      <a href="https://example.com">Medizinische Bildgebungslösungen</a>
+    </div>
+    <ul>
+      <li><a href="#home">Start</a></li>
+      <li><a href="#technologies">Technologien</a></li>
+      <li><a href="#solutions">Lösungen</a></li>
+      <li><a href="#quote">Angebot anfordern</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero advanced-hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Revolution der medizinischen Bildgebung</h1>
+        <p class="hero-subtitle">Vorgerückte Technologie, die die Diagnose der Gesundheit verändert</p>
+        <div class="hero-cta">
+          <a href="#quote" class="btn btn-primary">Angebot anfordern</a>
+          <a href="#technologies" class="btn btn-secondary">Technologien erkunden</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg class="medical-scanner-illustration" viewBox="0 0 500 400">
+          <path d="M100 50 Q250 150, 400 50" fill="none" stroke="#3498db" stroke-width="4"/>
+          <circle cx="250" cy="250" r="150" fill="rgba(52,98,219,0.1)"/>
+          <rect x="150" y="200" width="200" height="100" rx="10" fill="#ffffff" stroke="#2c3e50" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-metrics">
+      <div class="metric">
+        <span class="metric-value">50+</span>
+        <span class="metric-label">Länder, die bedient werden</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value">10,000+</span>
+        <span class="metric-label">Scanner, die bereitgestellt werden</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value">1M+</span>
+        <span class="metric-label">Patienten, die pro Jahr unterstützt werden</span>
+      </div>
+    </div>
+  </section>
+
+  <form id="quote-form" class="quote-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="phone">Telefon:</label>
+    <input type="tel" id="phone" name="phone" required><br><br>
+    <label for="scanner_type">Scanner-Typ:</label>
+    <select id="scanner_type" name="scanner_type" required>
+      <option value="CT">CT-Scanner</option>
+      <option value="MRI">MRT-Scanner</option>
+      <option value="PET">PET-Scanner</option>
+    </select><br><br>
+    <label for="budget">Budget:</label>
+    <input type="number" id="budget" name="budget" required><br><br>
+    <input type="submit" value="Angebot anfordern">
+  </form>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Scanner-Typ</th>
+        <th>Preis</th>
+        <th>Merkmalen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CT-Scanner</td>
+        <td>$100,000</td>
+        <td>Hochauflösende Bilder, schnelle Untersuchungszeit</td>
+      </tr>
+      <tr>
+        <td>MRT-Scanner</td>
+        <td>$200,000</td>
+        <td>Hohe Feldstärke, fortschrittliche Bildgebungsfähigkeiten</td>
+      </tr>
+      <tr>
+        <td>PET-Scanner</td>
+        <td>$300,000</td>
+        <td>Hochsensible Bilder, fortschrittliche Diagnosefähigkeiten</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <section id="technologies" class="tech-details">
+    <h2>Fortgeschrittene medizinische Bildgebungstechnologien</h2>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <h3>Diagnose durch Künstliche Intelligenz</h3>
+        <p>Verwenden Sie fortschrittliche KI-Technologien, um die Diagnosegenauigkeit und -effizienz zu verbessern.</p>
+      </div>
+      <div class="tech-item">
+        <h3>3D-Rekonstruktion</h3>
+        <p>Fortschrittliche Bildgebungsfähigkeiten für detailliertere und vollständigere medizinische Visualisierung.</p>
+      </div>
+      <div class="tech-item">
+        <h3>Niedrigstrahlungsprotokolle</h3>
+        <p>Innovative Untersuchungstechniken, die die Strahlenbelastung des Patienten minimieren.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="emerging-technologies" id="emerging-tech">
+    <h2>Medizinische Bildgebungstechnologien in Entwicklung</h2>
+    <div class="tech-carousel">
+      <div class="tech-slide">
+        <h3>Molekularbilder</h3>
+        <p>Fortgeschrittene Techniken zur Visualisierung zellulärer und molekularer Prozesse in Echtzeit.</p>
+      </div>
+      <div class="tech-slide">
+        <h3>Terahertz-Bilder</h3>
+        <p> Nichtinvasive Bilder mit möglichen Anwendungen in der Früherkennung von Krankheiten.</p>
+      </div>
+      <div class="tech-slide">
+        <h3>Photoakustische Bilder</h3>
+        <p>Kombination von optischen und Ultraschalltechnologien für ein tieferes Verständnis von Geweben.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="support-section">
+    <h2>Umfassender Support für medizinische Bildgebung</h2>
+    <div class="support-features">
+      <div class="support-feature">
+        <h3>24/7-Technischer Support</h3>
+        <p>Sofortige Unterstützung für technische Probleme oder Fragen zu Ihrem medizinischen Bildgebungsgerät.</p>
+      </div>
+      <div class="support-feature">
+        <h3>Schulungsprogramme</h3>
+        <p>Umfassende Schulung für medizinisches Personal, um das volle Potenzial der Bildgebungstechnologie auszuschöpfen.</p>
+      </div>
+      <div class="support-feature">
+        <h3>Wartungs- und Reparaturpakete</h3>
+        <p>Flexiblere Wartungs- und Reparaturpakete, um Ihr Gerät auf höchstem Niveau zu halten.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-studies">
+    <h2>Reale Auswirkungen: Fallstudien</h2>
+    <p>Entdecken Sie, wie unsere medizinischen Bildgebungslösungen die Gesundheitsversorgung in verschiedenen Branchen verändert haben.</p>
+    <div class="case-study-grid">
+      <div class="case-study">
+        <h3>Aktualisierung eines städtischen Krankenhauses</h3>
+        <p>Wir haben die Diagnosezeit um 40 % reduziert und die Patienteneffizienz durch unseren fortschrittlichen CT-Scanner verbessert.</p>
+      </div>
+      <div class="case-study">
+        <h3>Transformation einer ländlichen Klinik</h3>
+        <p>Wir haben integrale Diagnosefähigkeiten in unterentwickelten Gebieten durch erschwingliche MRT-Technologie ermöglicht.</p>
+      </div>
+      <div class="case-study">
+        <h3>Fortgeschrittene Forschung in einem Institut</h3>
+        <p>Wir haben der medizinischen Forschung durch hochauflösende Bildgebungsgeräte geholfen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="global-impact">
+    <h2>Globale Auswirkungen der medizinischen Bildgebung</h2>
+    <p>Unsere Technologie macht einen Unterschied auf der ganzen Welt.</p>
+    <div class="impact-metrics">
+      <div class="impact-metric">
+        <h3>50+</h3>
+        <p>Länder, die bedient werden</p>
+      </div>
+      <div class="impact-metric">
+        <h3>10,000+</h3>
+        <p>Scanner, die bereitgestellt werden</p>
+      </div>
+      <div class="impact-metric">
+        <h3>1M+</h3>
+        <p>Patienten, die pro Jahr unterstützt werden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="innovation-showcase">
+    <h2>Am Puls der Innovation</h2>
+    <p>Erkunden Sie fortschrittliche Technologien, die die medizinische Bildgebung neu definieren.</p>
+    <div class="innovation-grid">
+      <div class="innovation">
+        <h3>Integration von Künstlicher Intelligenz</h3>
+        <p>KI-gestützte Diagnoseunterstützung für genauere Interpretationen.</p>
+      </div>
+      <div class="innovation">
+        <h3>Quantenbilder</h3>
+        <p>Bildgebungstechnologie der nächsten Generation mit unvergleichbarer Auflösung.</p>
+      </div>
+      <div class="innovation">
+        <h3>Cloud-Diagnose</h3>
+        <p>Nahtloses Teilen von Daten und Diagnosefähigkeiten.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gps-comparison">
+    <h2>Vergleich von China- und weltweiten medizinischen Bildgebungs-Technologien</h2>
+    <div class="gps-characteristics">
+      <h3>CT-Scanner</h3>
+      <div class="performance-grid">
+        <div class="performance-metric">
+          <strong>Ortungsgenauigkeit:</strong> 3-5 Meter
+        </div>
+        <div class="performance-metric">
+          <strong>Hersteller:</strong> 
+          <span class="brand-chip">Neusoft Medical Systems</span>
+          <span class="brand-chip">United Imaging</span>
+        </div>
+        <div class="performance-metric">
+          <strong>Eigene Vorteile:</strong>
+          <div class="advantage-chips">
+            <span class="innovation-chip">In-Länder-Innovation</span>
+            <span class="innovation-chip">Kosteneffektiv</span>
+            <span class="innovation-chip">Schnelle Entwicklung</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gps-characteristics">
+      <h3>MRT-Scanner</h3>
+      <div class="performance-grid">
+        <div class="performance-metric">
+          <strong>Ortungsgenauigkeit:</strong> 1-3 Meter
+        </div>
+        <div class="performance-metric">
+          <strong>Hersteller:</strong> 
+          <span class="brand-chip">GE Healthcare</span>
+          <span class="brand-chip">Siemens Healthineers</span>
+        </div>
+        <div class="performance-metric">
+          <strong>Eigene Vorteile:</strong>
+          <div class="advantage-chips">
+            <span class="innovation-chip">Globale Abdeckung</span>
+            <span class="innovation-chip">Etablierte Technologie</span>
+            <span class="innovation-chip">Umfassende Forschung</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gps-characteristics">
+      <h3>PET-Scanner</h3>
+      <div class="performance-grid">
+        <div class="performance-metric">
+          <strong>Ortungsgenauigkeit:</strong> 1-5 Meter
+        </div>
+        <div class="performance-metric">
+          <strong>Hersteller:</strong> 
+          <span class="brand-chip">Philips Healthcare</span>
+          <span class="brand-chip">Hitachi Medical</span>
+        </div>
+        <div class="performance-metric">
+          <strong>Eigene Vorteile:</strong>
+          <div class="advantage-chips">
+            <span class="innovation-chip">Präzisionsmedizin</span>
+            <span class="innovation-chip">Fortschrittliche Diagnose</span>
+            <span class="innovation-chip">Globale Präsenz</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="metric-comparison">
+      <div class="performance-metric">
+        <strong>Genauigkeit:</strong>
+        <span class="china-metric">China: 3-5m</span>
+        <span class="global-metric">Weltweit: 1-3m</span>
+      </div>
+      <div class="performance-metric">
+        <strong>Signalzuverlässigkeit:</strong>
+        <span class="china-metric">China: Regionale Stärke</span>
+        <span class="global-metric">Weltweit: Konsistent global</span>
+      </div>
+      <div class="performance-metric">
+        <strong>Technologische Reife:</strong>
+        <span class="china-metric">China: Schnelle Entwicklung</span>
+        <span class="global-metric">Weltweit: Etabliert</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="price-comparison-tool extended">
+    <h2>Erweitertes Preisvergleichstool für Scanner</h2>
+    <div class="comparison-controls">
+      <div class="scanner-type-selector">
+        <label>Scanner-Typ:</label>
+        <select id="comparison-scanner-type">
+          <option value="CT">CT-Scanner</option>
+          <option value="MRI">MRT-Scanner</option>
+          <option value="PET">PET-Scanner</option>
+        </select>
+      </div>
+      <div class="price-range-selector">
+        <label>Preisbereich: <span id="price-range-display">$100,000 - $500,000</span></label>
+        <input type="range" id="price-range" min="50000" max="1000000" step="50000">
+      </div>
+    </div>
+    <div class="comparison-results">
+      <div class="comparison-grid" id="scanner-comparison-grid">
+        <!-- Ergebnisse des Vergleichs -->
+      </div>
+    </div>
+    <div class="comparison-summary">
+      <h3>Zusammenfassung des Vergleichs</h3>
+      <div id="comparison-insights"></div>
+    </div>
+  </section>
+
+  <section class="technical-specifications enhanced-specs">
+    <div class="specs-container">
+      <h2>Erweiterte technische Spezifikationen</h2>
+      <p>Umfassende Details zu unseren fortschrittlichen medizinischen Bildgebungsgeräten</p>
+      
+      <div class="specs-grid">
+        <div class="spec-card" data-scanner-type="CT">
+          <h3>CT-Scanner-Spezifikationen</h3>
+          <ul>
+            <li data-tooltip="Anzahl der aufgenommenen Bildscheiben">
+              <strong>Anzahl der Scheiben:</strong> 256 Mehrscheiben
+            </li>
+            <li data-tooltip="Maximale Ausgangsleistung des Scanners">
+              <strong>Leistungsklasse:</strong> 80 kW
+            </li>
+            <li data-tooltip="Räumliche Auflösung der Bildaufnahme">
+              <strong>Auflösung:</strong> 0,5 mm x 0,5 mm
+            </li>
+          </ul>
+        </div>
+        
+        <div class="spec-card" data-scanner-type="MRI">
+          <h3>MRT-Scanner-Spezifikationen</h3>
+          <ul>
+            <li data-tooltip="Feldstärke">
+              <strong>Feldstärke:</strong> 1,5 Tesla
+            </li>
+            <li data-tooltip="Signal-Rausch-Verhältnis">
+              <strong>SNR:</strong> 120:1
+            </li>
+            <li data-tooltip="Bildbereich und -tiefe">
+              <strong>Bildbereich:</strong> Vollkörperbilder
+            </li>
+          </ul>
+        </div>
+        
+        <div class="spec-card" data-scanner-type="PET">
+          <h3>PET-Scanner-Spezifikationen</h3>
+          <ul>
+            <li data-tooltip="Detektoraufösung">
+              <strong>Axiale Auflösung:</strong> 4,0 mm
+            </li>
+            <li data-tooltip="Energiebereich">
+              <strong>Energiefenster:</strong> 350-650 keV
+            </li>
+            <li data-tooltip="Detektorempfindlichkeit">
+              <strong>Empfindlichkeit:</strong> 7,0 cps/kBq
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="training-certification">
+    <h2>Schulung und Zertifizierung</h2>
+    <p>Bleiben Sie mit den neuesten medizinischen Bildgebungstechnologien und -techniken up-to-date</p>
+    <div class="training-programs">
+      <div class="training-program">
+        <h3>Grundlagen der medizinischen Bildgebung</h3>
+        <p>Erfahren Sie die Grundlagen der medizinischen Bildgebung und sammeln Sie praktische Erfahrung mit unseren Geräten.</p>
+      </div>
+      <div class="training-program">
+        <h3>Fortgeschrittene Bildgebungsmodalitäten</h3>
+        <p>Erkunden Sie die neuesten Entwicklungen in der medizinischen Bildgebung und bleiben Sie mit den Branchentrends auf dem Laufenden.</p>
+      </div>
+      <div class="training-program">
+        <h3>Klinische Anwendungen</h3>
+        <p>Entdecken Sie, wie Sie medizinische Bildgebungstechniken in der realen Welt anwenden können.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="price-calculator">
+    <div class="container">
+      <h2>Medizinischer Bildgebungs-Scanner-Preisrechner</h2>
+      <div class="calculator-form">
+        <select id="scanner-type">
+          <option value="CT">CT-Scanner</option>
+          <option value="MRI">MRT-Scanner</option>
+          <option value="PET">PET-Scanner</option>
+        </select>
+        <input type="range" id="slice-range" min="4" max="256" value="64">
+        <span id="slice-value">64 Scheiben</span>
+        <div id="estimated-price">Geschätzter Preis: $250,000</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Bleiben Sie mit den neuesten medizinischen Bildgebungstechnologien up-to-date</h2>
+    <p>Melden Sie sich für unseren Newsletter an, um die neuesten Technologien und Branchenperspektiven zu erhalten</p>
+    <form class="newsletter-form" id="newsletter-signup">
+      <input type="email" placeholder="Ihre E-Mail-Adresse" required>
+      <button type="submit">Abonnieren</button>
+    </form>
+  </section>
+
+  <section class="faqs">
+    <div class="container">
+      <h2>Häufig gestellte Fragen</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Welche Arten von medizinischen Bildgebungsgeräten bieten Sie an?</h3>
+          <p>Wir bieten eine umfassende Palette von CT-, MRT- und PET-Scannern von führenden Herstellern an.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Bieten Sie Finanzierungsmöglichkeiten an?</h3>
+          <p>Ja, wir bieten flexible Finanzierungslösungen an, um medizinischen Einrichtungen den Erwerb fortschrittlicher Bildgebungsgeräte zu ermöglichen.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Was ist Ihr Garantieumfang?</h3>
+          <p>Unsere Scanner sind mit umfassenden Garantiepaketen ausgestattet, einschließlich technischem Support und Wartungsdiensten.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Kann ich eine maßgeschneiderte Lösung erhalten?</h3>
+          <p>Absolut! Wir arbeiten eng mit unseren Kunden zusammen, um maßgeschneiderte medizinische Bildgebungslösungen für ihre spezifischen Bedürfnisse zu entwickeln.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partnerships">
+    <div class="container">
+      <h2>Unsere globalen Partnerschaften</h2>
+      <p>Wir arbeiten mit führenden Gesundheitseinrichtungen und technologischen Innovatoren auf der ganzen Welt zusammen.</p>
+      <div class="partnership-logos">
+        <div class="partner-logo">
+          <img src="https://example.com/partner1-logo.svg" alt="Partner 1" data-src="https://example.com/partner1-logo.svg">
+        </div>
+        <div class="partner-logo">
+          <img src="placeholder.svg" alt="Partner 2" data-src="https://example.com/partner2-logo.svg">
+        </div>
+        <div class="partner-logo">
+          <img src="placeholder.svg" alt="Partner 3" data-src="https://example.com/partner3-logo.svg">
+        </div>
+        <div class="partner-logo">
+          <img src="placeholder.svg" alt="Partner 4" data-src="https://example.com/partner4-logo.svg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="market-landscape market-landscape-card-grid">
+    <div class="market-landscape-header">
+      <h2>Umfassender Marktüberblick der medizinischen Bildgebung</h2>
+      <p>Erkunden Sie den sich entwickelnden Markt für medizinische Bildgebungstechnologien, Marktdynamik und globale Trends</p>
+    </div>
+    
+    <div class="market-landscape-grid">
+      <div class="landscape-card global-innovation-trends">
+        <h3>Globale Innovations Trends</h3>
+        <div class="innovation-chips">
+          <span class="innovation-chip">Diagnose durch Künstliche Intelligenz</span>
+          <span class="innovation-chip">Cloud-Bilder</span>
+          <span class="innovation-chip">Präzisionsmedizin</span>
+        </div>
+      </div>
+      
+      <div class="landscape-card technological-frontiers">
+        <h3>Technologische Grenzen</h3>
+        <div class="frontier-technologies">
+          <div class="technology-card">
+            <h4>Quantenbilder</h4>
+            <div class="tech-details">
+              <span class="tech-readiness">Reife: Entwicklungsstadium</span>
+              <span class="tech-impact">Potenzieller Einfluss: Hoch</span>
+              <div class="tech-applications">
+                <span class="app-chip">Molekularbilder</span>
+                <span class="app-chip">Präzisionsdiagnosen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="landscape-card competitive-landscape">
+        <h3>Wettbewerbslandschaft</h3>
+        <div class="manufacturer-comparison">
+          <div class="manufacturer-card">
+            <h4>Neusoft Medical Systems</h4>
+            <div class="manufacturer-metrics">
+              <span class="market-share">Marktanteil: 45%</span>
+              <div class="technological-strengths">
+                <span class="strength-chip">Integration von Künstlicher Intelligenz</span>
+                <span class="strength-chip">Kosteneffiziente Lösungen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="landscape-card regional-market-analysis">
+        <h3>Regionale Marktanalyse</h3>
+        <div class="regional-insights">
+          <div class="region-card asia">
+            <h4>Asien-Markt</h4>
+            <div class="market-metrics">
+              <span class="growth-rate">Wachstumsrate: 9,2%</span>
+              <div class="key-drivers">
+                <span class="driver-chip">Gesundheitsinfrastruktur</span>
+                <span class="driver-chip">Medizintourismus</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="landscape-card future-market-outlook">
+        <h3>Marktausblick</h3>
+        <div class="market-projections">
+          <div class="projection-item">
+            <span class="year">2025</span>
+            <span class="value">$45,6 Milliarden</span>
+          </div>
+          <div class="projection-item">
+            <span class="year">2030</span>
+            <span class="value">$68,3 Milliarden</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="competitive-landscape enhanced-market-dynamics">
+    <h3>Wettbewerbslandschaft der globalen medizinischen Bildgebung</h3>
+    <div class="market-players-grid">
+      <div class="market-segment domestic-manufacturers">
+        <h4>Inländische Hersteller</h4>
+        <div class="manufacturer-detailed-card" data-brand="Neusoft">
+          <h5>Neusoft Medical Systems</h5>
+          <div class="market-metrics">
+            <div class="market-share">Marktanteil: 45%</div>
+            <div class="technological-strengths">
+              <div class="strength-chip">Integration von Künstlicher Intelligenz</div>
+              <div class="strength-chip">Kosteneffiziente Lösungen</div>
+              <div class="strength-chip">Schnelle Innovation</div>
+            </div>
+            <div class="competitive-advantages">
+              <p>Hauptinländischer Hersteller mit starken F&E-Kapazitäten und Regierungsunterstützung</p>
+            </div>
+          </div>
+        </div>
+        <div class="manufacturer-detailed-card" data-brand="United Imaging">
+          <h5>United Imaging</h5>
+          <div class="market-metrics">
+            <div class="market-share">Marktanteil: 30%</div>
+            <div class="technological-strengths">
+              <div class="strength-chip">Fortgeschrittene Bilder</div>
+              <div class="strength-chip">Forschungspartnerschaften</div>
+              <div class="strength-chip">Globale Wettbewerbsfähigkeit</div>
+            </div>
+            <div class="competitive-advantages">
+              <p>Globale Präsenz in Expansion mit fortschrittlichen Bildgebungstechnologien</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="market-segment international-manufacturers">
+        <h4>Internationale Hersteller</h4>
+        <div class="manufacturer-detailed-card" data-brand="GE">
+          <h5>GE Healthcare</h5>
+          <div class="market-metrics">
+            <div class="market-share">Marktanteil: 2,74%</div>
+            <div class="technological-strengths">
+              <div class="strength-chip">Diagnose durch Künstliche Intelligenz</div>
+              <div class="strength-chip">Globales Forschungsnetz</div>
+              <div class="strength-chip">Integrierte Lösungen</div>
+            </div>
+            <div class="competitive-advantages">
+              <p>Umfangreiche globale Erfahrung und integrierte Technologie</p>
+            </div>
+          </div>
+        </div>
+        <div class="manufacturer-detailed-card" data-brand="Siemens">
+          <h5>Siemens Healthineers</h5>
+          <div class="market-metrics">
+            <div class="market-share">Marktanteil: 2,93%</div>
+            <div class="technological-strengths">
+              <div class="strength-chip">Präzisionsingenieurwesen</div>
+              <div class="strength-chip">Fortgeschrittene Bildgebungsprotokolle</div>
+              <div class="strength-chip">Gesundheitslösungen</div>
+            </div>
+            <div class="competitive-advantages">
+              <p>Starker Fokus auf technologische Innovation und präzisionsmedizinische Lösungen</p>
+            </div>
+          </div>
+        </div>
+        <div class="manufacturer-detailed-card" data-brand="Philips">
+          <h5>Philips Healthcare</h5>
+          <div class="market-metrics">
+            <div class="market-share">Marktanteil: 1,92%</div>
+            <div class="technological-strengths">
+              <div class="strength-chip">Patientenorientierter Design</div>
+              <div class="strength-chip">Integrierte Gesundheitslösungen</div>
+              <div class="strength-chip">Innovation in der Bildgebung</div>
+            </div>
+            <div class="competitive-advantages">
+              <p>Innovativer Ansatz in Gesundheitstechnologie und Patientenerfahrung</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="competitive-dynamics">
+      <h4>Marktdynamikanalyse</h4>
+      <div class="market-trends">
+        <div class="trend-chip">Integrationswachstum von Künstlicher Intelligenz</div>
+        <div class="trend-chip">Wechsel zu Niedrigstrahlungstechnologien</div>
+        <div class="trend-chip">Fokus auf Präzisionsmedizin</div>
+      </div>
+      <div class="competitive-strategies">
+        <h5>Wettbewerbsstrategien</h5>
+        <ul>
+          <li>Investitionen in Künstliche Intelligenz und maschinelles Lernen</li>
+          <li>Entwicklung integrierter Gesundheitslösungen</li>
+          <li>Fokus auf Schwellenmärkte</li>
+          <li>Strategische Forschungspartnerschaften</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="medical-imaging-market-dynamics">
+    <div id="ct-market-dynamics" class="market-dynamics-container">
+      <div class="market-dynamics-detailed">
+        <h3>Umfassende Marktanalyse für CT-Scanner</h3>
+        
+        <div class="market-segmentation">
+          <div class="segment-tier low-end">
+            <h5>Einstiegslevel</h5>
+            <div class="tier-details">
+              <div class="tier-characteristics">
+                <div class="characteristic">
+                  <strong>Preisbereich:</strong> $50,000 - $100,000
+                </div>
+                <div class="characteristic">
+                  <strong>Zielmarkt:</strong> Kleine Kliniken, ländliche Gesundheitsversorgung
+                </div>
+                <div class="characteristic">
+                  <strong>Schlüsselmerkmale:</strong> Grundlegende Bilder, Niedrigstrahlung, kompaktes Design
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="segment-tier mid-range">
+            <h5>Mittelklasse</h5>
+            <div class="tier-details">
+              <div class="tier-characteristics">
+                <div class="characteristic">
+                  <strong>Preisbereich:</strong> $100,000 - $250,000
+                </div>
+                <div class="characteristic">
+                  <strong>Zielmarkt:</strong> Mittelgroße Krankenhäuser, Diagnosezentren
+                </div>
+                <div class="characteristic">
+                  <strong>Schlüsselmerkmale:</strong> Fortgeschrittene Scheibenzahl, bessere Auflösung, Integration von Künstlicher Intelligenz
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="segment-tier high-end">
+            <h5>Hochend</h5>
+            <div class="tier-details">
+              <div class="tier-characteristics">
+                <div class="characteristic">
+                  <strong>Preisbereich:</strong> $250,000 - $500,000
+                </div>
+                <div class="characteristic">
+                  <strong>Zielmarkt:</strong> Forschungseinrichtungen, große Krankenhäuser
+                </div>
+                <div class="characteristic">
+                  <strong>Schlüsselmerkmale:</strong> Ultrahochauflösung, fortschrittliche KI-Diagnose, Mindeststrahlung
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-share-breakdown">
+          <h4>Marktanteilsanalyse</h4>
+          <div class="market-share-grid">
+            <div class="domestic-brands">
+              <h5>Inländische Marken</h5>
+              <div class="brand-share-card">
+                <span class="brand-name">Neusoft</span>
+                <div class="brand-share-bar" style="width: 72%">
+                  72%
+                </div>
+              </div>
+              <div class="brand-share-card">
+                <span class="brand-name">United Imaging</span>
+                <div class="brand-share-bar" style="width: 30%">
+                  30%
+                </div>
+              </div>
+              <div class="brand-share-card">
+                <span class="brand-name">Mindray Medical</span>
+                <div class="brand-share-bar" style="width: 15%">
+                  15%
+                </div>
+              </div>
+            </div>
+            <div class="international-brands">
+              <h5>Internationale Marken</h5>
+              <div class="brand-share-card">
+                <span class="brand-name">GE</span>
+                <div class="brand-share-bar" style="width: 2.74%">
+                  2.74%
+                </div>
+              </div>
+              <div class="brand-share-card">
+                <span class="brand-name">Siemens</span>
+                <div class="brand-share-bar" style="width: 2.93%">
+                  2.93%
+                </div>
+              </div>
+              <div class="brand-share-card">
+                <span class="brand-name">Philips</span>
+                <div class="brand-share-bar" style="width: 1.92%">
+                  1.92%
+                </div>
+              </div>
+              <div class="brand-share-card">
+                <span class="brand-name">Canon Medical Systems</span>
+                <div class="brand-share-bar" style="width: 1.5%">
+                  1.5%
+                </div>
+              </div>
+              <div class="brand-share-card">
+                <span class="brand-name">Hitachi Medical</span>
+                <div class="brand-share-bar" style="width: 1.3%">
+                  1.3%
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="market-evolution-section">
+          <h4>Entwicklung der CT-Technologie</h4>
+          <div class="historical-context">
+            <h5>Wichtige Meilensteine</h5>
+            <div class="milestone">
+              <span class="milestone-year">1971</span>
+              <span class="milestone-event">Sir Godfrey Hounsfield entwickelt den ersten CT-Scanner in den EMI-Laboratorien</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">1972</span>
+              <span class="milestone-event">Erste erfolgreiche CT-Untersuchung des Gehirns</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">1973</span>
+              <span class="milestone-event">Kommerzieller Start des ersten EMI-Scanners</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">1975</span>
+              <span class="milestone-event">Einführung der Vollkörper-CT-Untersuchung</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">1979</span>
+              <span class="milestone-event">Hounsfield und Cormack erhalten den Nobelpreis für die CT-Technologie</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">1983</span>
+              <span class="milestone-event">Entwicklung der ersten 3D-Rekonstruktionen durch GE Healthcare</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">1991</span>
+              <span class="milestone-event">Einführung der Spiral-CT (Helical-CT) durch Siemens</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">1998</span>
+              <span class="milestone-event">Einführung der Multislice-CT (MDCT) durch GE und Siemens</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">2000</span>
+              <span class="milestone-event">Möglichkeit der fortgeschrittenen Herz-CT-Untersuchungen</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">2002</span>
+              <span class="milestone-event">Einführung der Doppelenergie-CT durch Philips</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">2010</span>
+              <span class="milestone-event">Beginn der Integration von Künstlicher Intelligenz in die CT-Technologie</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">2012</span>
+              <span class="milestone-event">Entwicklung von Niedrigstrahlungs-CT-Technologien</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">2014</span>
+              <span class="milestone-event">Einführung von Photonenzähl-Detektoren in der CT durch Siemens</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">2020</span>
+              <span class="milestone-event">CT-Bilder werden entscheidend für die Diagnose von COVID-19</span>
+            </div>
+            <p class="technology-evolution">
+              Von den ersten Röntgentechnologien bis hin zu künstlicher Intelligenz-gestützten Bildern: Die Transformation der CT-Technologie in China
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mri-market-dynamics" class="market-dynamics-container">
+      <div class="market-dynamics-detailed">
+        <h3>Umfassende Marktanalyse für MRT-Scanner</h3>
+        <div class="market-segmentation">
+          <div class="segment-tier research">
+            <h5>Forschungsniveau</h5>
+            <div class="tier-details">
+              <div class="tier-characteristics">
+                <div class="characteristic">
+                  <strong>Feldstärke:</strong> 7T+
+                </div>
+                <div class="characteristic">
+                  <strong>Preisbereich:</strong> $500,000 - $1,500,000
+                </div>
+                <div class="characteristic">
+                  <strong>Spezielle Anwendungen:</strong> Neurowissenschaftliche Forschung, Zellabbildung
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="segment-tier clinical">
+            <h5>Klinisches Niveau</h5>
+            <div class="tier-details">
+              <div class="tier-characteristics">
+                <div class="characteristic">
+                  <strong>Feldstärke:</strong> 1,5T - 3,0T
+                </div>
+                <div class="characteristic">
+                  <strong>Preisbereich:</strong> $250,000 - $500,000
+                </div>
+                <div class="characteristic">
+                  <strong>Spezielle Anwendungen:</strong> Allgemeine Diagnose, Onkologie, Neurologie
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="historical-milestones">
+          <h4>Entwicklung der MRT-Technologie</h4>
+          <div class="timeline">
+            <div class="milestone-item">
+              <span class="milestone-year">1982</span>
+              <span class="milestone-event">Nationales Forschungsprojekt zur Entwicklung der MRT-Technologie gestartet</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-year">1986</span>
+              <span class="milestone-event">Gründung von Shenzhen Anke Company</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-year">1987</span>
+              <span class="milestone-event">Entwicklung des ersten Permanentmagneten mit 1500 Gauss für die MRT</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-year">1992</span>
+              <span class="milestone-event">Entwicklung des ersten supraleitenden MRT-Scanners mit einer Feldstärke von 0,6T</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-year">2007</span>
+              <span class="milestone-event">United Imaging stellt den Centauri 1,5T MRT-Scanner vor</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-year">2008</span>
+              <span class="milestone-event">Der erste in China hergestellte MRT-Scanner kommt auf den US-Markt</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-year">2015</span>
+              <span class="milestone-event">Einführung der großen Öffnung von 71cm für den 1,5T MRT-Scanner</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-year">2020</span>
+              <span class="milestone-event">Weltweit erster 75cm großer Öffnungs-3,0T-MRT-Scanner</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-year">2021</span>
+              <span class="milestone-event">Erster Vollkörper-5,0T-MRT-Scanner</span>
+            </div>
+          </div>
+        </div>
+        <div class="market-evolution-section">
+          <h4>Transformation der MRT-Technologie</h4>
+          <div class="historical-context">
+            <h5>Technologische Meilensteine</h5>
+            <div class="milestone">
+              <span class="milestone-year">1982</span>
+              <span class="milestone-event">Nationales Forschungsprojekt zur Entwicklung der MRT-Technologie gestartet</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">1986</span>
+              <span class="milestone-event">Gründung von Shenzhen Anke Company</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">1987</span>
+              <span class="milestone-event">Entwicklung des ersten Permanentmagneten mit 1500 Gauss für die MRT</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">1992</span>
+              <span class="milestone-event">Entwicklung des ersten supraleitenden MRT-Scanners mit einer Feldstärke von 0,6T</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">2007</span>
+              <span class="milestone-event">United Imaging stellt den Centauri 1,5T MRT-Scanner vor</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">2008</span>
+              <span class="milestone-event">Der erste in China hergestellte MRT-Scanner kommt auf den US-Markt</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">2015</span>
+              <span class="milestone-event">Einführung der großen Öffnung von 71cm für den 1,5T MRT-Scanner</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">2020</span>
+              <span class="milestone-event">Weltweit erster 75cm großer Öffnungs-3,0T-MRT-Scanner</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-year">2021</span>
+              <span class="milestone-event">Erster Vollkörper-5,0T-MRT-Scanner</span>
+            </div>
+            <p class="technology-evolution">
+              Übergang von importierten Technologien zu inländisch entwickelten Technologien
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-preview">
+    <div class="container">
+      <h2>Neueste Artikel aus unserem Blog</h2>
+      <p>Bleiben Sie mit den neuesten Trends und Entwicklungen in der medizinischen Bildgebungstechnologie auf dem Laufenden</p>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-card-content">
+            <h3>Kampf um den inländischen CT-Markt</h3>
+            <p>Detaillierte Analyse der Wettbewerbsstrategien von United Imaging, Neusoft und Mingfeng</p>
+            <a href="https://chinactscanner.org/blog/kampf-um-den-inlandischen-ct-markt-united-imaging-neusoft-mingfeng" class="blog-link">Vollständigen Artikel lesen</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-content">
+            <h3>Zeitlinie der CT-Scanner-Entwicklung</h3>
+            <p>Umfassender Überblick über die Entwicklung der CT-Technologie von den ersten Röntgenstrahlen bis hin zu den modernen künstlichen Intelligenz-gestützten Systemen</p>
+            <a href="https://chinactscanner.org/blog/ct-scanner-entwicklungszeitlinie" class="blog-link">Vollständigen Artikel lesen</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-content">
+            <h3>Meilensteine in der MRT-Technologie</h3>
+            <p>Erkunden Sie die wichtigsten Innovationen in der MRT-Technologie in China</p>
+            <a href="https://chinactscanner.org/blog/mrt-technologie-meilensteine" class="blog-link">Vollständigen Artikel lesen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h4>Schnellzugriff</h4>
+            <ul>
+              <li><a href="https://chinactscanner.org/brands-catalog">Marken-Katalog</a></li>
+              <li><a href="https://chinactscanner.org/catalog">Vollständiger Katalog</a></li>
+              <li><a href="https://chinactscanner.org/ct-scanner">CT-Scanner-Leitfaden</a></li>
+              <li><a href="https://chinactscanner.org/mri-scanner">MRT-Scanner-Leitfaden</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Ressourcen</h4>
+            <ul>
+              <li><a href="https://chinactscanner.org/blog/import-leitfaden">Import-Leitfaden</a></li>
+              <li><a href="https://chinactscanner.org/device-az">Geräte-A-Z</a></li>
+              <li><a href="https://chinactscanner.org/device-catalog">Geräte-Katalog</a></li>
+              <li><a href="https://chinactscanner.org/market-insights">Marktinformationen</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Rechtliches</h4>
+            <ul>
+              <li><a href="https://chinactscanner.org/privacy">Datenschutzerklärung</a></li>
+              <li><a href="https://chinactscanner.org/terms">Nutzungsbedingungen</a></li>
+              <li><a href="https://chinactscanner.org/cookies">Cookie-Richtlinie</a></li>
+              <li><a href="https://chinactscanner.org/disclaimer">Haftungsausschluss</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Sprache</h4>
+            <ul>
+              <li><a href="https://chinactscanner.org/zh">Chinesisch</a></li>
+              <li><a href="https://chinactscanner.org/en">Englisch</a></li>
+              <li><a href="https://chinactscanner.org/de">Deutsch</a></li>
+              <li><a href="https://chinactscanner.org/fr">Französisch</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2023 Medizinische Bildgebungslösungen. Alle Rechte vorbehalten.
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const advancedMarketInsightsData = {
+      CTMarket: {
+        historicalContext: {
+          earlyDevelopment: 'Von der Entdeckung der Röntgenstrahlen bis hin zu den ersten CT-Scannern hat die CT-Technologie in China eine signifikante Transformation erfahren',
+          keyInnovators: [
+            'Nationales Wissenschafts- und Technologiekommission', 
+            'Wichtige internationale Marken wie EMI, GE, Siemens, Philips',
+            'Inländische Hersteller wie United Imaging'
+          ],
+          globalSignificance: 'Die Rolle Chinas im globalen CT-Markt etablieren'
+        },
+        technologicalMilestones: [
+          { year: 1971, event: 'Sir Godfrey Hounsfield entwickelt den ersten CT-Scanner in den EMI-Laboratorien' },
+          { year: 1972, event: 'Erste erfolgreiche CT-Untersuchung des Gehirns' },
+          { year: 1973, event: 'Kommerzieller Start des ersten EMI-Scanners' },
+          { year: 1975, event: 'Einführung der Vollkörper-CT-Untersuchung' },
+          { year: 1979, event: 'Hounsfield und Cormack erhalten den Nobelpreis für die CT-Technologie' },
+          { year: 1983, event: 'Entwicklung der ersten 3D-Rekonstruktionen durch GE Healthcare' },
+          { year: 1991, event: 'Einführung der Spiral-CT (Helical-CT) durch Siemens' },
+          { year: 1998, event: 'Einführung der Multislice-CT (MDCT) durch GE und Siemens' },
+          { year: 2000, event: 'Möglichkeit der fortgeschrittenen Herz-CT-Untersuchungen' },
+          { year: 2002, event: 'Einführung der Doppelenergie-CT durch Philips' },
+          { year: 2010, event: 'Beginn der Integration von Künstlicher Intelligenz in die CT-Technologie' },
+          { year: 2012, event: 'Entwicklung von Niedrigstrahlungs-CT-Technologien' },
+          { year: 2014, event: 'Einführung von Photonenzähl-Detektoren in der CT durch Siemens' },
+          { year: 2020, event: 'CT-Bilder werden entscheidend für die Diagnose von COVID-19' }
+        ],
+      },
+      MRIMarket: {
+        technologicalMilestones: [
+          { year: 1982, event: 'Nationales Forschungsprojekt zur Entwicklung der MRT-Technologie gestartet' },
+          { year: 1986, event: 'Gründung von Shenzhen Anke Company' },
+          { year: 1987, event: 'Entwicklung des ersten Permanentmagneten mit 1500 Gauss für die MRT' },
+          { year: 1992, event: 'Entwicklung des ersten supraleitenden MRT-Scanners mit einer Feldstärke von 0,6T' },
+          { year: 2007, event: 'United Imaging stellt den Centauri 1,5T MRT-Scanner vor' },
+          { year: 2008, event: 'Der erste in China hergestellte MRT-Scanner kommt auf den US-Markt' },
+          { year: 2015, event: 'Einführung der großen Öffnung von 71cm für den 1,5T MRT-Scanner' },
+          { year: 2020, event: 'Weltweit erster 75cm großer Öffnungs-3,0T-MRT-Scanner' },
+          { year: 2021, event: 'Erster Vollkörper-5,0T-MRT-Scanner' }
+        ],
+      },
+      CompetitiveMarket: {
+        domesticManufacturers: [
+          {
+            name: 'Neusoft Medical Systems',
+            marketShare: 45,
+            strengths: ['Integration von Künstlicher Intelligenz', 'Kosteneffiziente Lösungen', 'Schnelle Innovation'],
+            country: 'China'
+          },
+          {
+            name: 'United Imaging',
+            marketShare: 30,
+            strengths: ['Fortgeschrittene Bilder', 'Forschungspartnerschaften', 'Globale Wettbewerbsfähigkeit'],
+            country: 'China'
+          },
+          {
+            name: 'Mindray Medical',
+            marketShare: 15,
+            strengths: ['Zugängliche Technologie', 'Breites Produktportfolio', 'Fokus auf Schwellenmärkte'],
+            country: 'China'
+          }
+        ],
+        internationalManufacturers: [
+          {
+            name: 'GE Healthcare',
+            marketShare: 2.74,
+            strengths: ['Diagnose durch Künstliche Intelligenz', 'Globales Forschungsnetz', 'Integrierte Lösungen'],
+            country: 'USA'
+          },
+          {
+            name: 'Siemens Healthineers',
+            marketShare: 2.93,
+            strengths: ['Präzisionsingenieurwesen', 'Fortgeschrittene Bildgebungsprotokolle', 'Gesundheitslösungen'],
+            country: 'Deutschland'
+          },
+          {
+            name: 'Philips Healthcare',
+            marketShare: 1.92,
+            strengths: ['Patientenorientierter Design', 'Integrierte Gesundheitslösungen', 'Innovation in der Bildgebung'],
+            country: 'Niederlande'
+          },
+          {
+            name: 'Canon Medical Systems',
+            marketShare: 1.5,
+            strengths: ['Fortgeschrittene CT-Technologie', 'Präzisionsbilder', 'Medizinische Innovation'],
+            country: 'Japan'
+          },
+          {
+            name: 'Hitachi Medical',
+            marketShare: 1.3,
+            strengths: ['Innovation in der MRT', 'Fortgeschrittene Diagnose-Technologien', 'Forschungspartnerschaften'],
+            country: 'Japan'
+          }
+        ]
+      }
+    };
+
+    function renderMarketInsights() {
+      const ctMarketDynamicsContainer = document.getElementById('ct-market-dynamics');
+      const mriMarketDynamicsContainer = document.getElementById('mri-market-dynamics');
+
+      ctMarketDynamicsContainer.innerHTML = `
+        <div class="market-dynamics-detailed">
+          <h3>Umfassende Marktanalyse für CT-Scanner</h3>
+          <div class="market-segmentation">
+            <div class="segment-tier low-end">
+              <h5>Einstiegslevel</h5>
+              <div class="tier-details">
+                <div class="tier-characteristics">
+                  <div class="characteristic">
+                    <strong>Preisbereich:</strong> $50,000 - $100,000
+                  </div>
+                  <div class="characteristic">
+                    <strong>Zielmarkt:</strong> Kleine Kliniken, ländliche Gesundheitsversorgung
+                  </div>
+                  <div class="characteristic">
+                    <strong>Schlüsselmerkmale:</strong> Grundlegende Bilder, Niedrigstrahlung, kompaktes Design
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="segment-tier mid-range">
+              <h5>Mittelklasse</h5>
+              <div class="tier-details">
+                <div class="tier-characteristics">
+                  <div class="characteristic">
+                    <strong>Preisbereich:</strong> $100,000 - $250,000
+                  </div>
+                  <div class="characteristic">
+                    <strong>Zielmarkt:</strong> Mittelgroße Krankenhäuser, Diagnosezentren
+                  </div>
+                  <div class="characteristic">
+                    <strong>Schlüsselmerkmale:</strong> Fortgeschrittene Scheibenzahl, bessere Auflösung, Integration von Künstlicher Intelligenz
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="segment-tier high-end">
+              <h5>Hochend</h5>
+              <div class="tier-details">
+                <div class="tier-characteristics">
+                  <div class="characteristic">
+                    <strong>Preisbereich:</strong> $250,000 - $500,000
+                  </div>
+                  <div class="characteristic">
+                    <strong>Zielmarkt:</strong> Forschungseinrichtungen, große Krankenhäuser
+                  </div>
+                  <div class="characteristic">
+                    <strong>Schlüsselmerkmale:</strong> Ultrahochauflösung, fortschrittliche KI-Diagnose, Mindeststrahlung
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="market-share-breakdown">
+            <h4>Marktanteilsanalyse</h4>
+            <div class="market-share-grid">
+              <div class="domestic-brands">
+                <h5>Inländische Marken</h5>
+                ${advancedMarketInsightsData.CompetitiveMarket.domesticManufacturers.map(brand => `
+                  <div class="brand-share-card">
+                    <span class="brand-name">${brand.name}</span>
+                    <div class="brand-share-bar" style="width: ${brand.marketShare}%">
+                      ${brand.marketShare}%
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="international-brands">
+                <h5>Internationale Marken</h5>
+                ${advancedMarketInsightsData.CompetitiveMarket.internationalManufacturers.map(brand => `
+                  <div class="brand-share-card">
+                    <span class="brand-name">${brand.name}</span>
+                    <div class="brand-share-bar" style="width: ${brand.marketShare}%">
+                      ${brand.marketShare}%
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+          <div class="market-evolution-section">
+            <h4>Entwicklung der CT-Technologie</h4>
+            <div class="historical-context">
+              <h5>Wichtige Meilensteine</h5>
+              ${advancedMarketInsightsData.CTMarket.technologicalMilestones.map(milestone => `
+                <div class="milestone">
+                  <span class="milestone-year">${milestone.year}</span>
+                  <span class="milestone-event">${milestone.event}</span>
+                </div>
+              `).join('')}
+              <p class="technology-evolution">
+                Von den ersten Röntgentechnologien bis hin zu künstlicher Intelligenz-gestützten Bildern: Die Transformation der CT-Technologie in China
+              </p>
+            </div>
+          </div>
+        </div>
+      `;
+
+      mriMarketDynamicsContainer.innerHTML = `
+        <div class="market-dynamics-detailed">
+          <h3>Umfassende Marktanalyse für MRT-Scanner</h3>
+          <div class="market-segmentation">
+            <div class="segment-tier research">
+              <h5>Forschungsniveau</h5>
+              <div class="tier-details">
+                <div class="tier-characteristics">
+                  <div class="characteristic">
+                    <strong>Feldstärke:</strong> 7T+
+                  </div>
+                  <div class="characteristic">
+                    <strong>Preisbereich:</strong> $500,000 - $1,500,000
+                  </div>
+                  <div class="characteristic">
+                    <strong>Spezielle Anwendungen:</strong> Neurowissenschaftliche Forschung, Zellabbildung
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="segment-tier clinical">
+              <h5>Klinisches Niveau</h5>
+              <div class="tier-details">
+                <div class="tier-characteristics">
+                  <div class="characteristic">
+                    <strong>Feldstärke:</strong> 1,5T - 3,0T
+                  </div>
+                  <div class="characteristic">
+                    <strong>Preisbereich:</strong> $250,000 - $500,000
+                  </div>
+                  <div class="characteristic">
+                    <strong>Spezielle Anwendungen:</strong> Allgemeine Diagnose, Onkologie, Neurologie
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="historical-milestones">
+            <h4>Entwicklung der MRT-Technologie</h4>
+            <div class="timeline">
+              ${advancedMarketInsightsData.MRIMarket.technologicalMilestones.map(milestone => `
+                <div class="milestone-item">
+                  <span class="milestone-year">${milestone.year}</span>
+                  <span class="milestone-event">${milestone.event}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          <div class="market-evolution-section">
+            <h4>Transformation der MRT-Technologie</h4>
+            <div class="historical-context">
+              <h5>Technologische Meilensteine</h5>
+              ${advancedMarketInsightsData.MRIMarket.technologicalMilestones.map(milestone => `
+                <div class="milestone">
+                  <span class="milestone-year">${milestone.year}</span>
+                  <span class="milestone-event">${milestone.event}</span>
+                </div>
+              `).join('')}
+              <p class="technology-evolution">
+                Übergang von importierten Technologien zu inländisch entwickelten Technologien
+              </p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        renderMarketInsights();
+      } catch (error) {
+        console.error('Fehler bei der Darstellung der Marktinformationen:', error);
+        const backupContent = document.createElement('div');
+        backupContent.className = 'market-insights-error';
+        backupContent.innerHTML = `
+          <h3>Marktinformationen</h3>
+          <p>Die Marktinformationen werden aktualisiert. Bitte versuchen Sie es später erneut.</p>
+        `;
+        document.querySelector('.market-landscape')?.appendChild(backupContent);
+      }
+    });
+
+    document.querySelector('form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      const requiredFields = ['name', 'email', 'phone', 'scanner_type', 'budget'];
+      let isValid = true;
+      let validationMessages = [];
+      requiredFields.forEach(field => {
+        const input = form.querySelector(`#${field}`);
+        if (!input.value.trim()) {
+          input.style.borderColor = 'red';
+          validationMessages.push(`${field.replace('_', ' ').toUpperCase()} ist erforderlich`);
+          isValid = false;
+        } else {
+          input.style.borderColor = '';
+        }
+      });
+      const emailInput = form.querySelector('#email');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value)) {
+        emailInput.style.borderColor = 'red';
+        validationMessages.push('Ungültiges E-Mail-Format');
+        isValid = false;
+      }
+      if (!isValid) {
+        alert(validationMessages.join('\n'));
+        return;
+      }
+      try {
+        const response = await fetch('https://example.com/api/quote-request', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(Object.fromEntries(formData))
+        });
+        if (response.ok) {
+          alert('Anfrage erfolgreich gesendet! Wir werden uns bald bei Ihnen melden.');
+          form.reset();
+        } else {
+          throw new Error('Fehler bei der Anfrage');
+        }
+      } catch (error) {
+        console.error('Fehler bei der Anfrage:', error);
+        alert('Es gab einen Fehler bei der Anfrage. Bitte versuchen Sie es erneut.');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const navigationLinks = document.querySelectorAll('a[href^="#"]');
+
+      navigationLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+
+    const slides = document.querySelectorAll('.tech-slide');
+    let currentSlide = 0;
+    function changeSlides() {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[currentSlide].style.display = 'block';
+      currentSlide = (currentSlide + 1) % slides.length;
+    }
+    slides[0].style.display = 'block';
+    setInterval(changeSlides, 5000);
+
+    document.querySelector('#newsletter-signup').addEventListener('submit', async e => {
+      e.preventDefault();
+      const emailInput = e.target.querySelector('input[type="email"]');
+      const email = emailInput.value;
+
+      try {
+        const response = await fetch('https://example.com/api/newsletter-signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email })
+        });
+
+        if (response.ok) {
+          alert('Vielen Dank für Ihre Anmeldung zum Newsletter!');
+          emailInput.value = '';
+        } else {
+          throw new Error('Fehler bei der Anmeldung');
+        }
+      } catch (error) {
+        console.error('Fehler bei der Anmeldung:', error);
+        alert('Es gab einen Fehler bei der Anmeldung. Bitte versuchen Sie es erneut.');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const partnerLogos = document.querySelectorAll('.partner-logo img');
+
+      const lazyLoadOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px 50px 0px'
+      };
+
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            observer.unobserve(img);
+          }
+        });
+      }, lazyLoadOptions);
+
+      partnerLogos.forEach(logo => {
+        if (logo.src === 'placeholder.svg') {
+          imageObserver.observe(logo);
+        }
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const specCards = document.querySelectorAll('.spec-card');
+
+      specCards.forEach(card => {
+        card.addEventListener('mouseover', e => {
+          const scannerType = card.dataset.scannerType;
+          highlightRelatedContent(scannerType);
+        });
+
+        card.addEventListener('mouseout', () => {
+          resetHighlights();
+        });
+      });
+
+      function highlightRelatedContent(scannerType) {
+        const relevantSections = document.querySelectorAll(`[data-scanner-type="${scannerType}"]`);
+        relevantSections.forEach(section => {
+          section.classList.add('highlighted');
+        });
+      }
+
+      function resetHighlights() {
+        const highlightedSections = document.querySelectorAll('.highlighted');
+        highlightedSections.forEach(section => {
+          section.classList.remove('highlighted');
+        });
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroElements = document.querySelectorAll('.hero-text h1, .hero-subtitle, .hero-cta, .hero-metrics');
+
+      heroElements.forEach((element, index) => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }, index * 200);
+      });
+    });
+  </script>
+</body>
+</html>
