@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Imaging Devices - A-Z</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Medical Imaging Devices - A-Z List</h1>
+  </header>
+  <main>
+    <section id="filters">
+        <label for="equipmentType">Equipment Type:</label>
+        <select id="equipmentType">
+            <option value="all">All</option>
+            <option value="ctScanners">CT Scanners</option>
+            <option value="mriScanners">MRI Scanners</option>
+        </select>
+    </section>
+     <section id="device-list">
+          <!-- Devices will be populated here, will be generated in js -->
+        </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
