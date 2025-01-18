@@ -1,4 +1,4 @@
-Certainly! Here is the updated JSON with the additional CT scanner manufacturers, including both international and domestic (Chinese) manufacturers:
+Based on the search results, here is the updated JSON with the additional CT scanner manufacturers, including both international and domestic (Chinese) manufacturers, and incorporating software and AI features:
 JSON复制
 {
   "Major Global CT Manufacturers": [
@@ -386,4 +386,4 @@ JSON复制
     }
   ]
 }
-This JSON now includes both the major global CT manufacturers and additional domestic (Chinese) CT manufacturers, providing a
+This JSON now includes both the major global CT manufacturers
