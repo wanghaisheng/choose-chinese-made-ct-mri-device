@@ -47,33 +47,33 @@ def getlinks(k,timeframe='7days',position='all',site='mp.weixin.qq.com'):
         except:
             continue
 
-        links = []
+        items = []
         pagecount=25
-        for p in range(1, pagecount + 1):
+        # for p in range(1, pagecount + 1):
+        while thereipagination:
+            tab.ele('text:下一页 >').click()
             time.sleep(3)
             
-            if p != 1:
-                try:
-                    # Find the second to last 'a' element within '.fya' and click it
-                    tab.ele('.fya').children()[-3].click()
-                    time.sleep(2)  # Allow time for page to load
-                except Exception as e:
-                    print(f"Error clicking next page: {e}")
-                    break
-
             try:
-                uls = tab.ele('.list_right').ele('.list_right_ul_list').children()
+                uls = tab.eles('.result c-container xpath-log new-pmd')
                 # print('00000',t.text)
                 # ulrs=t.children()
                 # print('111',urls.text)
                 # return 
                 for index,e in enumerate(uls):
                     print('====page=',p,index,e,e.text)
-                    if '名称' in e.text and '责任者' in e.text:
-                        continue
-                    link = e.ele("t:b").ele("t:a").link
-                    # print('url', link)
-                    links.append(link)
+                    link = e.ele("t:h3").ele("t:a").link
+                    title = e.ele("t:h3").ele("t:a").text
+                    dese=e.ele('.c-title t t tts-title').next(2)
+                    date=dese.ele('.c-color-gray2').text
+                    des=dese.ele('.content-right_1THTn').text                
+                    item={
+                        "keyword":k,
+                        "url":link,
+                        "title":title,
+                        "":,
+                         }
+                    items.append(item)
             except Exception as e:
                 print(f"Error on page {p}: {e}")
 
