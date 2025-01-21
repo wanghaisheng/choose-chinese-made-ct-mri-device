@@ -1,20 +1,37 @@
-# url='https://weixin.sogou.com/weixin?type=2&s_from=input&query=%E5%9B%BD%E4%BA%A7ct&ie=utf8&_sug_=y&_sug_type_=&w=01019900&sut=4315&sst0=1737143307348&lkt=1%2C1737143307246%2C1737143307246'
+# https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baiduadv&wd=%E5%9B%BD%E4%BA%A7ct%20site%3Amp.weixin.qq.com&oq=%E5%9B%BD%E4%BA%A7ct%20site%3Amp.weixin.qq.com&rsv_pq=e88db4ce00cd887e&rsv_t=256b4D2yo2fBNTqKe7E3IhSD4s4sO14u68eLuvCndtsP00QR1%2Br2andmZKJ69F0&rqlang=cn&rsv_enter=1&rsv_dl=tb&gpc=stf%3D1736852798%2C1737457598%7Cstftype%3D1&tfflag=1&si=mp.weixin.qq.com&ct=2097152from getbrowser import setup_chrome
+# https://weixin.sogou.com/weixin?query=%E5%9B%BD%E4%BA%A7ct&_sug_type_=&sut=4315&lkt=1%2C1737143307246%2C1737143307246&s_from=input&_sug_=y&type=2&sst0=1737143307348&page=10&ie=utf8&w=01019900&dr=1
+#搜狗不登录显示10条 总共1000条  放弃
 
-from getbrowser import setup_chrome
 import pandas as pd
 import json
 import time
 import argparse
 import os
+import urllib.parse
 
 browser = setup_chrome()
 
-def getlinks():
-    url='https://weixin.sogou.com/weixin?type=2&s_from=input&query=%E5%9B%BD%E4%BA%A7ct&ie=utf8&_sug_=y&_sug_type_=&w=01019900&sut=4315&sst0=1737143307348&lkt=1%2C1737143307246%2C1737143307246'
-  
-    urls = ['https://www.sxlib.org.cn/dfzy/qyqq/jmqqjm/jb/ctj/'
-            # ,'https://www.sxlib.org.cn/dfzy/qyqq/jmqqjm/jb/xdj/'
-           ]
+def getlinks(k,timeframe='7days',position='all',site='mp.weixin.qq.com'):
+    urls =[ ]
+    baseurl='https://www.baidu.com/?tn=68018901_16_pg'
+    site='mp.weixin.qq.com'
+    # input
+    tab=browser.new_tab()
+    tab.get(url)
+    tab.ele('.c-input adv-q-input switch-input').clear().input(k)
+    if timeframe =='all':
+        pass
+    elif timeframe=='1days':
+        
+    elif timeframe=='7days':
+        
+        tab.ele('.c-select-dropdown-list').click()
+    elif timeframe=='30days':
+        tab.ele('.c-select-dropdown-list').click()
+        
+    elif timeframe=='365days':
+        tab.ele('.c-select-dropdown-list').click()
+
     all_links = []
     for url in urls:
         tab = browser.new_tab()
@@ -121,8 +138,11 @@ if __name__ == "__main__":
         output_format = args.format
     if args.output:
         output_filename = args.output
+    keywords=['国产ct','国产mri']
+        
+    for k in keywords:
 
-    all_links = getlinks()
+        all_links = getlinks(k)
     print(f"Found {len(all_links)} links.")
     
     results = []
